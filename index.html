@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lore App</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <!-- HEADER NAVIGATION -->
+    <nav id="main-nav">
+        <div class="nav-brand">
+            <button id="home-btn" class="nav-btn">💬 Lore</button>
+        </div>
+        <div class="nav-actions">
+            <button id="chat-btn" class="nav-btn">💬 Chat</button>
+            <button id="profile-nav-btn" class="nav-btn">👤 Profile</button>
+            <button id="login-reg-btn" class="nav-btn">🔐 Login/Register</button>
+        </div>
+    </nav>
+
+    <!-- HOME PAGE -->
+    <div id="home-page" class="page active">
+        <div class="hero-section">
+            <h1>Welcome to Lore</h1>
+            <p>Connect with friends in real-time. Share moments, send messages and stay connected with your loved ones.</p>
+            <button id="start-chat-btn" class="cta-btn">Start Chatting →</button>
+        </div>
+
+        <div class="features-grid">
+            <div class="feature-card">
+                <div class="feature-icon">💬</div>
+                <h3>Real-time Chat</h3>
+                <p>Instant messaging with friends and groups. Send messages, images and files instantly.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">👥</div>
+                <h3>Friends System</h3>
+                <p>Add friends, see who's online, and start private conversations with anyone.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">🔒</div>
+                <h3>Private Messages</h3>
+                <p>Secure private messaging with end-to-end encryption for your personal conversations.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- CHAT PAGE -->
+    <div id="chat-page" class="page">
+        <div class="chat-layout">
+            <!-- SIDEBAR -->
+            <div id="sidebar">
+                <div class="sidebar-header">
+                    <h2>Lore</h2>
+                    <div class="room-info">
+                        <div class="status-dot"></div>
+                        <span>Online</span>
+                    </div>
+                </div>
+
+                <!-- CHAT ROOMS -->
+                <div class="chat-rooms">
+                    <h3>AVAILABLE ROOMS</h3>
+                    <div class="room-list">
+                        <div class="room-item active" data-room="general">
+                            <span class="room-icon">💬</span>
+                            <span class="room-name">General Chat</span>
+                            <span class="room-badge">12</span>
+                        </div>
+                        <div class="room-item" data-room="gaming">
+                            <span class="room-icon">🎮</span>
+                            <span class="room-name">Gaming</span>
+                            <span class="room-badge">8</span>
+                        </div>
+                        <div class="room-item" data-room="work">
+                            <span class="room-icon">💼</span>
+                            <span class="room-name">Work</span>
+                            <span class="room-badge">9</span>
+                        </div>
+                        <div class="room-item" data-room="music">
+                            <span class="room-icon">🎵</span>
+                            <span class="room-name">Music</span>
+                            <span class="room-badge">0</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- PRIVATE CHATS -->
+                <div class="private-chat-section">
+                    <h3>PRIVATE MESSAGES</h3>
+                    <div class="friends-list" id="friends-list">
+                        <div class="friend-item" data-friend="User722">
+                            <div class="friend-avatar">U7</div>
+                            <div class="friend-info">
+                                <span class="friend-name">User722</span>
+                                <span class="friend-status">Online</span>
+                            </div>
+                            <span class="unread-badge">2</span>
+                        </div>
+                        <div class="friend-item" data-friend="User914">
+                            <div class="friend-avatar">U9</div>
+                            <div class="friend-info">
+                                <span class="friend-name">User914</span>
+                                <span class="friend-status">Away</span>
+                            </div>
+                        </div>
+                        <div class="friend-item" data-friend="User489">
+                            <div class="friend-avatar">U4</div>
+                            <div class="friend-info">
+                                <span class="friend-name">User489</span>
+                                <span class="friend-status">Online</span>
+                            </div>
+                            <span class="unread-badge">1</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ONLINE USERS -->
+                <div class="online-users">
+                    <h3>ONLINE NOW</h3>
+                    <div id="users-list">
+                        <div class="user-item">
+                            <div class="user-avatar">U6</div>
+                            <div class="user-info">
+                                <span class="user-name">User649</span>
+                                <span class="user-status">Online</span>
+                            </div>
+                        </div>
+                        <div class="user-item">
+                            <div class="user-avatar">U7</div>
+                            <div class="user-info">
+                                <span class="user-name">User722</span>
+                                <span class="user-status">Online</span>
+                            </div>
+                        </div>
+                        <div class="user-item">
+                            <div class="user-avatar">U9</div>
+                            <div class="user-info">
+                                <span class="user-name">User914</span>
+                                <span class="user-status">Away</span>
+                            </div>
+                        </div>
+                        <div class="user-item">
+                            <div class="user-avatar">U4</div>
+                            <div class="user-info">
+                                <span class="user-name">User489</span>
+                                <span class="user-status">Online</span>
+                            </div>
+                        </div>
+                        <div class="user-item">
+                            <div class="user-avatar">U2</div>
+                            <div class="user-info">
+                                <span class="user-name">User256</span>
+                                <span class="user-status">Online</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- USER PROFILE -->
+                <div class="user-profile">
+                    <div class="profile-avatar">
+                        <div class="avatar">U6</div>
+                    </div>
+                    <div class="profile-info">
+                        <span class="profile-name">User649</span>
+                        <span class="profile-status">Online</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- MAIN CHAT -->
+            <div id="main-chat">
+                <div class="chat-header">
+                    <div class="chat-info">
+                        <h2>General Chat</h2>
+                        <span class="chat-description">Public room for general discussions</span>
+                    </div>
+                    <div class="chat-actions">
+                        <button class="action-btn clear-btn" id="clear-all-btn">🗑️ Clear</button>
+                    </div>
+                </div>
+
+                <!-- MESSAGES CONTAINER -->
+                <div id="messages-container">
+                    <!-- General Chat Messages -->
+                    <div class="room-messages active" id="general-messages">
+                        <div class="message other">
+                            <div class="message-header">
+                                <span class="message-sender">User722</span>
+                                <span class="message-time">17:29</span>
+                            </div>
+                            <div class="message-text">
+                                That's interesting! Tell me more about it. 😊
+                            </div>
+                        </div>
+                        <div class="message own">
+                            <div class="message-header">
+                                <span class="message-sender">You</span>
+                                <span class="message-time">17:30</span>
+                            </div>
+                            <div class="message-text">
+                                Hello everyone! How's it going? 👋
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Gaming Messages -->
+                    <div class="room-messages" id="gaming-messages">
+                        <div class="message other">
+                            <div class="message-header">
+                                <span class="message-sender">User914</span>
+                                <span class="message-time">16:45</span>
+                            </div>
+                            <div class="message-text">
+                                Anyone playing Valorant tonight? 🎮
+                            </div>
+                        </div>
+                        <div class="message own">
+                            <div class="message-header">
+                                <span class="message-sender">You</span>
+                                <span class="message-time">16:46</span>
+                            </div>
+                            <div class="message-text">
+                                I'm down for some games! 🔥
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Work Messages -->
+                    <div class="room-messages" id="work-messages">
+                        <div class="message other">
+                            <div class="message-header">
+                                <span class="message-sender">User489</span>
+                                <span class="message-time">15:20</span>
+                            </div>
+                            <div class="message-text">
+                                Has anyone finished the project report? 📊
+                            </div>
+                        </div>
+                        <div class="message own">
+                            <div class="message-header">
+                                <span class="message-sender">You</span>
+                                <span class="message-time">15:21</span>
+                            </div>
+                            <div class="message-text">
+                                Working on it right now! 💼
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Music Messages -->
+                    <div class="room-messages" id="music-messages">
+                        <div class="message other">
+                            <div class="message-header">
+                                <span class="message-sender">Lore Bot</span>
+                                <span class="message-time">14:00</span>
+                            </div>
+                            <div class="message-text">
+                                Welcome to the Music room! Share your favorite songs and playlists! 🎵
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Private Messages -->
+                    <div class="private-messages" id="private-user722">
+                        <div class="message other">
+                            <div class="message-header">
+                                <span class="message-sender">User722</span>
+                                <span class="message-time">17:25</span>
+                            </div>
+                            <div class="message-text">
+                                Hey! How are you doing? 😊
+                            </div>
+                        </div>
+                        <div class="message own">
+                            <div class="message-header">
+                                <span class="message-sender">You</span>
+                                <span class="message-time">17:26</span>
+                            </div>
+                            <div class="message-text">
+                                I'm good! Just working on some projects. How about you?
+                            </div>
+                        </div>
+                        <div class="message other">
+                            <div class="message-header">
+                                <span class="message-sender">User722</span>
+                                <span class="message-time">17:27</span>
+                            </div>
+                            <div class="message-text">
+                                Same here! Want to play some games later? 🎮
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="private-messages" id="private-user914">
+                        <div class="message other">
+                            <div class="message-header">
+                                <span class="message-sender">User914</span>
+                                <span class="message-time">16:40</span>
+                            </div>
+                            <div class="message-text">
+                                Anyone playing Valorant tonight? 🎮
+                            </div>
+                        </div>
+                        <div class="message own">
+                            <div class="message-header">
+                                <span class="message-sender">You</span>
+                                <span class="message-time">16:41</span>
+                            </div>
+                            <div class="message-text">
+                                I'm down for some games! What time? 🔥
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="private-messages" id="private-user489">
+                        <div class="message other">
+                            <div class="message-header">
+                                <span class="message-sender">User489</span>
+                                <span class="message-time">15:15</span>
+                            </div>
+                            <div class="message-text">
+                                Has anyone finished the project report? 📊
+                            </div>
+                        </div>
+                        <div class="message own">
+                            <div class="message-header">
+                                <span class="message-sender">You</span>
+                                <span class="message-time">15:16</span>
+                            </div>
+                            <div class="message-text">
+                                Working on it right now! Almost done 💼
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- MESSAGE INPUT -->
+                <div class="message-input-container">
+                    <form id="chat-form">
+                        <div class="input-actions">
+                            <button type="button" class="input-action-btn">😊</button>
+                            <button type="button" class="input-action-btn">📎</button>
+                            <button type="button" class="input-action-btn">🎵</button>
+                        </div>
+                        <textarea id="message-input" autocomplete="off" placeholder="Type your message..." rows="1"></textarea>
+                        <button type="submit" class="send-btn">Send</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- PROFILE MODAL -->
+    <div class="modal" id="profile-modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Edit Profile</h3>
+                <button class="close-modal-btn" id="close-profile-modal">×</button>
+            </div>
+            <div class="profile-form">
+                <div class="avatar-section">
+                    <div class="profile-avatar-large">
+                        <div class="avatar-large">U6</div>
+                        <button class="change-avatar-btn">Change Avatar</button>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="profile-username">Username</label>
+                    <input type="text" id="profile-username" value="User649">
+                </div>
+                <div class="form-group">
+                    <label for="profile-status">Status</label>
+                    <input type="text" id="profile-status" value="Online">
+                </div>
+                <div class="form-group">
+                    <label for="profile-email">Email</label>
+                    <input type="email" id="profile-email" value="user@example.com">
+                </div>
+                <div class="form-group">
+                    <label for="profile-bio">Bio</label>
+                    <textarea id="profile-bio">Hello! I'm new to Lore Chat and excited to connect with everyone! 👋</textarea>
+                </div>
+                <div class="modal-buttons">
+                    <button class="btn btn-secondary" id="cancel-profile">Cancel</button>
+                    <button class="btn btn-primary" id="save-profile">Save Changes</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- LOGIN/REGISTER MODAL -->
+    <div class="modal" id="login-modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Welcome to Lore</h3>
+                <button class="close-modal-btn" id="close-login-modal">×</button>
+            </div>
+
+            <div class="tabs">
+                <div class="tab active" data-tab="login">Login</div>
+                <div class="tab" data-tab="signup">Register</div>
+            </div>
+
+            <div id="login-form" class="form-container active">
+                <div class="form-group">
+                    <label for="login-email">Email</label>
+                    <input type="email" id="login-email" placeholder="your@email.com" value="demo@example.com">
+                </div>
+
+                <div class="form-group">
+                    <label for="login-password">Password</label>
+                    <input type="password" id="login-password" placeholder="Enter your password" value="demo123">
+                </div>
+
+                <div class="form-options">
+                    <label class="checkbox-label">
+                        <input type="checkbox" id="remember-me">
+                        <span class="checkmark"></span>
+                        Remember me
+                    </label>
+                    <a href="#" class="forgot-password">Forgot password?</a>
+                </div>
+
+                <div class="modal-buttons">
+                    <button class="btn btn-primary" id="login-submit">Login</button>
+                    <button class="btn btn-secondary" id="login-cancel">Cancel</button>
+                </div>
+
+                <div class="guest-section">
+                    <p>Don't have an account?</p>
+                    <button class="btn btn-guest" id="switch-to-signup">Create Account</button>
+                </div>
+            </div>
+
+            <div id="signup-form" class="form-container">
+                <div class="form-group">
+                    <label for="signup-email">Email</label>
+                    <input type="email" id="signup-email" placeholder="your@email.com">
+                </div>
+
+                <div class="form-group">
+                    <label for="signup-username">Username</label>
+                    <input type="text" id="signup-username" placeholder="Choose a username">
+                </div>
+
+                <div class="form-group">
+                    <label for="signup-password">Password</label>
+                    <input type="password" id="signup-password" placeholder="Create a password">
+                </div>
+
+                <div class="form-group">
+                    <label for="signup-confirm">Confirm Password</label>
+                    <input type="password" id="signup-confirm" placeholder="Confirm your password">
+                </div>
+
+                <div class="form-options">
+                    <label class="checkbox-label">
+                        <input type="checkbox" id="terms-agree">
+                        <span class="checkmark"></span>
+                        I agree to the <a href="#">Terms of Service</a> and <a href="#">Privacy Policy</a>
+                    </label>
+                </div>
+
+                <div class="modal-buttons">
+                    <button class="btn btn-primary" id="signup-submit">Create Account</button>
+                    <button class="btn btn-secondary" id="signup-cancel">Cancel</button>
+                </div>
+
+                <div class="guest-section">
+                    <p>Already have an account?</p>
+                    <button class="btn btn-guest" id="switch-to-login">Sign In</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="client.js"></script>
+</body>
+
+</html>
