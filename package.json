@@ -4,7 +4,8 @@
   "type": "commonjs",
   "scripts": {
     "dev": "ts-node server.ts",
-    "start": "node server.js"
+    "build": "tsc",
+    "start": "node dist/server.js"
   },
   "dependencies": {
     "express": "^4.18.2",
